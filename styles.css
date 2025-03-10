@@ -5,10 +5,11 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  padding-top: 70px; /* Adjust to match your navbar height */
-  background: #0E0E0E;
+  padding-top: 70px;
+  background: radial-gradient(circle at center, rgba(0, 47, 167, 0.6) 0%, #0E0E0E 80%);
   color: #fff;
 }
+
 a {
   text-decoration: none;
 }
@@ -57,8 +58,10 @@ a {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  padding-top: 140px; /* Increase this value if the navbar still overlaps */
+  padding: 140px 20px;
+  position: relative;
+  background: rgba(0, 47, 167, 0.2); /* Slight blue tint */
+  box-shadow: 0px 0px 60px 20px rgba(0, 47, 167, 0.5); /* Outer blue glow */
 }
 .hero h1 {
   font-size: 48px;
@@ -72,6 +75,19 @@ a {
   margin: 20px auto;
   color: #aaa;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 47, 167, 0.6);
+  filter: blur(100px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
 .cta-button {
   display: inline-block;
   background: #002fa7;
@@ -81,9 +97,11 @@ a {
   color: #fff;
   margin-top: 20px;
   transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0, 47, 167, 0.8);
 }
 .cta-button:hover {
   background: #0056b3;
+  box-shadow: 0 0 40px rgba(0, 47, 167, 1);
 }
 
 /* Trusted By Section */
